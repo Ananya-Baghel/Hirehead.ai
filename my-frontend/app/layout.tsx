@@ -1,9 +1,12 @@
+import "./global.css";
+import { ReactNode } from "react";
+
 export const metadata = {
-  title: "Resume Analyzer",
-  description: "ATS Resume Analyzer Frontend",
+  title: "Hirehead.ai",
+  description: "AI-powered Resume Analyzer",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>{children}</body>
