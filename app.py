@@ -242,7 +242,7 @@ ensure_model()
 
 # ---------- Endpoints ----------
 
-@app.get("/health")
+@app.get("/")
 def health():
     return {"status": "ok", "message": "Resume Bot API running"}
 
