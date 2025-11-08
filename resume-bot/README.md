@@ -43,3 +43,40 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app:app --reload
+# Resume Bot API
+
+## ✅ Base URL
+Replace with your Render URL:
+
+
+---
+
+## ✅ ✅ cURL Examples
+
+### ✅ Health Check
+```bash
+curl -X GET https://your-render-service.onrender.com/health
+
+
+curl -X POST https://your-render-service.onrender.com/analyze \
+  -H "Content-Type: application/json" \
+  -d '{
+        "resume_text": "Experienced Python developer...",
+        "job_description": "Looking for Python, AWS, Flask",
+        "target_role": "Backend Engineer"
+      }'
+curl -X POST https://your-render-service.onrender.com/analyze-file \
+  -F "file=@resume.pdf" \
+  -F "job_description=Python role"
+
+curl -X POST https://your-render-service.onrender.com/train
+
+
+---
+
+# ✅ 2. WHERE TO ADD `.env` FILES (Next.js)
+Your Next.js app should have a `.env.local` file.
+
+✅ Create inside your Next.js project root:
+
+
