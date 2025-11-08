@@ -11,7 +11,7 @@ export default function Home() {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resume_text: resume })
+        body: JSON.stringify({ resume_text: resume }),
       }
     );
 
@@ -22,21 +22,22 @@ export default function Home() {
   return (
     <main style={{ padding: 20 }}>
       <h1>Resume ATS Analyzer</h1>
+
       <textarea
         value={resume}
         onChange={(e) => setResume(e.target.value)}
-        placeholder="Paste resume text"
-        style={{ width: "100%", height: "180px", marginTop: 12 }}
-      ></textarea>
+        placeholder="Paste resume text here"
+        style={{ width: "100%", height: "150px", marginTop: 12 }}
+      />
 
       <button
         onClick={analyzeResume}
         style={{
           marginTop: 12,
-          padding: "8px 16px",
+          padding: "10px 20px",
           background: "black",
           color: "white",
-          border: "none",
+          borderRadius: 8,
         }}
       >
         Analyze Resume
@@ -49,7 +50,6 @@ export default function Home() {
             color: "#0f0",
             padding: 12,
             marginTop: 20,
-            overflowX: "auto",
           }}
         >
           {JSON.stringify(result, null, 2)}
